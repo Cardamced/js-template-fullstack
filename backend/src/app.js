@@ -4,6 +4,8 @@ const express = require("express");
 
 const app = express();
 
+const path = require("path");
+
 // Configure it
 
 /* ************************************************************************* */
@@ -89,6 +91,8 @@ const router = require("./router");
 
 // Mount the API routes under the "/api" endpoint
 app.use("/api", router);
+
+app.use(express.static(path.join(__dirname, "../public")));
 
 /* ************************************************************************* */
 
